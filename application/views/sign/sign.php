@@ -113,7 +113,7 @@ const dynamicElement = document.querySelector(".dynamicElement")
 toggle.onclick = () => {
 	if(document.querySelector("#phone") !== null){
 		//Hide phone, show email
-		dynamicElement.innerHTML = '<div id="email"><label>Email: </label><br><input type="email" id="my-input" placeholder="example123@gmail.com" value=""></div>';
+		dynamicElement.innerHTML = '<div id="email"><label>Email: </label><br><input type="email" id="my-input" placeholder="example123@gmail.com" value="" name="email"></div>';
 		toggle.innerHTML = "Use Phone"
 	}
 	else{
