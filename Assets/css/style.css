@@ -339,12 +339,14 @@ ol {
 }
 
 .header__top__links a {
-	color: #ffffff;
 	font-size: 13px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	margin-right: 28px;
 	display: inline-block;
+}
+.header__top__links a, .header__top__links span{
+	color: #fff;
 }
 
 .header__top__links a:last-child {

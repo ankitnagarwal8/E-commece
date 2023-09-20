@@ -13,6 +13,7 @@ class sign extends CI_Controller {
 				require 'vendor/autoload.php';
 
 				$email = $this->input->post('email');
+				
 
 				try {
 					
@@ -68,13 +69,36 @@ class sign extends CI_Controller {
     $sql = $this->db->query("UPDATE register SET email_verified_at = NOW() WHERE email = '" . $email . "' AND verification_code = '" . $verification_code . "'");
 
     if($sql){
-    	echo "<p>You can login now.</p>";
+    		$newdata = array(
+        		'email'     => $email,
+        		'logged_in' => TRUE
+			);
+    	$this->load->library('session');	
+		$data = $this->session->set_userdata($newdata);
+
+    	$this->load->view('sign/passset');
     }else{
     	echo "<h1>sorry try!</h1>";
     }
 
     
    
+	}
+	public function Setpass(){
+		$pass = $this->input->post('pass1');
+		$pass2 = $this->input->post('pass2');
+		if($pass == $pass2){
+
+				$Arr = array(
+			"password" => $pass
+		);
+		$this->load->database();
+		$this->db->insert('register',$Arr);
+		$this->load->view('website/index');
+		}else{
+			echo "Please Enter both passwords are same";
+		}	
+
 	}
 
 

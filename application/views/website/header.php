@@ -10,7 +10,15 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="<?= base_url('sign_in/sign'); ?>">Sign in</a>
+                                 <?php
+
+                                    if($_SESSION['logged_in'] == 1) {
+                                            echo "<a href=".base_url('home/Profile_Dtails').">Hello, ".$_SESSION['email']."</a>"; 
+                                        }else{
+                                            echo "<a href=".base_url('sign_in/sign').">Sign in</a>";
+                                        }
+                                    ?> 
+                                
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -36,19 +44,28 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li class="active"><a href="shop.php">Shop</a></li>
+                            <li class="active"><a href="<?= base_url(); ?>">Home</a></li>
+                            <li><a href="<?= base_url('home/shop'); ?>">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="shop-details.php">Shop Details</a></li>
-                                    <li><a href="shopping-cart.php">Shopping Cart</a></li>
-                                    <li><a href="checkout.php">Check Out</a></li>
-                                    <li><a href="blog-details.php">Blog Details</a></li>
+                                    <li><a href="<?= base_url('home/about'); ?>">About Us</a></li>
+                                    <li><a href="<?= base_url('home/shop_details'); ?>">Shop Details</a></li>
+                                    <li><a href="<?= base_url('home/shopping_cart'); ?>">Shopping Cart</a></li>
+                                    <li><a href="<?= base_url('home/checkout'); ?>">Check Out</a></li>
+                                    <li><a href="<?= base_url('sign_in/sign') ?>">sign in</a></li>
+                                    <li><a href="<?= base_url('home/blog_details'); ?>">Blog Details</a></li>
+                                    <?php
+                                    if($_SESSION['logged_in'] == 1){
+                                        echo"
+                                    <li><a href=".base_url('home/Profile_Dtails').">Profile Details</a></li>";
+                                    }
+                                    ?>
                                 </ul>
                             </li>
-                            <li><a href="blog.php">Blog</a></li>
-                            <li><a href="contact.php">Contacts</a></li>
+                            <li><a href="<?= base_url('home/blog'); ?>">Blog</a></li>
+                            <li><a href="<?= base_url('home/contact'); ?>">Contacts</a></li>
+
+
                         </ul>
                     </nav>
                 </div>
