@@ -85,6 +85,7 @@ class sign extends CI_Controller {
    
 	}
 	public function Setpass(){
+		$email = $_SESSION['email'];
 		$pass = $this->input->post('pass1');
 		$pass2 = $this->input->post('pass2');
 		if($pass == $pass2){
@@ -93,7 +94,8 @@ class sign extends CI_Controller {
 			"password" => $pass
 		);
 		$this->load->database();
-		$this->db->insert('register',$Arr);
+		$this->db->update('register',$Arr);
+		$this->db->where('email',$email);
 		$this->load->view('website/index');
 		}else{
 			echo "Please Enter both passwords are same";

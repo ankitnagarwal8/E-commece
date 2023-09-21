@@ -89,6 +89,7 @@
   					<input type="reset" value="reset">
   					<button id="toggle" type="button">Use Email</button>
 				</form>
+				<a href="<?= base_url('sign_in/login'); ?>">you are already registered please login</a>
 			</div>
 	</div>	
 	

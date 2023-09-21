@@ -6,10 +6,13 @@ class logout extends CI_Controller {
 
 	public function index()
 	{
-		
-		$distroye = $this->session->sess_destroy();
+
+		$this->session->unset_userdata('email');
+		// echo "<pre>";print_r($this->session->userdata());die;
+
+		$distroye = session_destroy();
 		if($distroye){
-        $this->load->view('website/index');	
-    }
+        	$this->load->view('sign/login');	
+    	}
 	}
 }

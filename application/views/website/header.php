@@ -11,12 +11,23 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                  <?php
+                                 // echo "<pre>";print_r($this->session->userdata());die;
 
-                                    if($_SESSION['logged_in'] == 1) {
+                                 // echo "<pre>";print_r($_SESSION['logged_in']);die;
+
+
+
+                                 if(isset($_SESSION['logged_in']) && (isset($_SESSION['email']))){
+
+                                    // if($_SESSION['logged_in'] == 1) {
                                             echo "<a href=".base_url('home/Profile_Dtails').">Hello, ".$_SESSION['email']."</a>"; 
-                                        }else{
-                                            echo "<a href=".base_url('sign_in/sign').">Sign in</a>";
-                                        }
+                                        // }
+                                        // else{
+                                        //     echo "<a href=".base_url('sign_in/sign').">Sign in</a>";
+                                        // }
+                                    }else{
+                                        echo "<a href=".base_url('sign_in/sign').">Sign in</a>";
+                                    }
                                     ?> 
                                 
                                 <a href="#">FAQs</a>
