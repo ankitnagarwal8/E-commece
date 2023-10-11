@@ -63,10 +63,10 @@
                                     <li><a href="<?= base_url('home/shop_details'); ?>">Shop Details</a></li>
                                     <li><a href="<?= base_url('home/shopping_cart'); ?>">Shopping Cart</a></li>
                                     <li><a href="<?= base_url('home/checkout'); ?>">Check Out</a></li>
-                                    <li><a href="<?= base_url('sign_in/sign') ?>">sign in</a></li>
+                                    
                                     <li><a href="<?= base_url('home/blog_details'); ?>">Blog Details</a></li>
                                     <?php
-                                    if($_SESSION['logged_in'] == 1){
+                                    if(isset($_SESSION['logged_in']) && (isset($_SESSION['email']))){
                                         echo"
                                     <li><a href=".base_url('home/Profile_Dtails').">Profile Details</a></li>";
                                     }

@@ -5,12 +5,21 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('website/index');
+		$this->load->model('Home_data');
+		$data['res1'] = $this->Home_data->index();
+		
+		$this->load->view('website/index', $data);
 	}
 	public function shop()
 	{
-		
-		$this->load->view('website/shop');
+		$ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://dummyjson.com/products");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = curl_exec($ch);
+        
+        $obj['data'] = json_decode($data);
+
+		$this->load->view('website/shop', $obj);
 	}
 	public function about()
 	{
@@ -35,7 +44,15 @@ class Home extends CI_Controller {
 	}
 	public function blog()
 	{
-		$this->load->view('website/blog');
+		$ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://jsonplaceholder.typicode.com/posts");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = curl_exec($ch);
+        
+        $obj["data"] = json_decode($data);
+
+        $this->load->view('website/blog', $obj);
+        curl_close($ch);
 	}
 	public function contact()
 	{
@@ -43,7 +60,12 @@ class Home extends CI_Controller {
 	}
 	public function Profile_Dtails()
 	{
-		$this->load->view('Profile/Profile_Dtails');
+		$email = $_SESSION['email'];
+		$this->load->database();
+		$res = $this->db->query("select * from register where email='$email'");
+		$data['results'] = $res->result_array();
+		$this->load->view('Profile/Profile_Dtails',$data);
+		
 	}
 
 }
