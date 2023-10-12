@@ -10,17 +10,17 @@ class Home extends CI_Controller {
 		
 		$this->load->view('website/index', $data);
 	}
-	public function shop()
+	/*public function shop()
 	{
-		$ch = curl_init();
+		/*$ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://dummyjson.com/products");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $data = curl_exec($ch);
         
         $obj['data'] = json_decode($data);
-
+		
 		$this->load->view('website/shop', $obj);
-	}
+	}*/
 	public function about()
 	{
 		$this->load->view('website/about');

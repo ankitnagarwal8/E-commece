@@ -1,4 +1,4 @@
-
+<!-- <?php echo $data->products[$i]->images[0]; ?> -->
 
 
 <!DOCTYPE html>
@@ -94,9 +94,9 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#">Men (20)</a></li>
-                                                    <li><a href="#">Women (20)</a></li>
-                                                    <li><a href="#">Bags (20)</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/All_Catagary'); ?>">All Catagary</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Groceries'); ?>">Groceries</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/smartphones'); ?>">smartphones</a></li>
                                                     <li><a href="#">Clothing (20)</a></li>
                                                     <li><a href="#">Shoes (20)</a></li>
                                                     <li><a href="#">Accessories (20)</a></li>
@@ -261,12 +261,11 @@
                     </div>
                     <div class="row">
                         <?php
-                            for($i=0;$i<=25;$i++)
-                                    {
+                            foreach($datas as $data):
                         ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" style="background-image: url('<?php echo $data->products[$i]->images[0]; ?>')" >
+                                <div class="product__item__pic set-bg" style="background-image: url('<?php echo $data['image1']; ?>')" >
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
@@ -275,7 +274,7 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><?php echo $data->products[0]->title; ?></h6>
+                                    <h6><?php echo $data['title']; ?></h6>
                                     <a href="#" class="add-cart">+ Add To Cart</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
@@ -284,7 +283,7 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <h5><?php echo $data->products[0]->price; ?></h5>
+                                    <h5><?php echo $data['price']; ?></h5>
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">
@@ -299,7 +298,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php endforeach;    ?>
                         
                     </div>
                     <div class="row">

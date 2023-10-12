@@ -56,7 +56,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="<?= base_url(); ?>">Home</a></li>
-                            <li><a href="<?= base_url('home/shop'); ?>">Shop</a></li>
+                            <li><a href="<?= base_url('shoping_Details/shoping_Details'); ?>">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="<?= base_url('home/about'); ?>">About Us</a></li>
