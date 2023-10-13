@@ -51,7 +51,7 @@
     <!-- Header Section Begin -->
     <?php include('header.php');  ?>
     <!-- Header Section End -->
-
+    <?php foreach($results as $result): ?>
     <!-- Shop Details Section Begin -->
     <section class="shop-details">
         <div class="product__details__pic">
@@ -70,51 +70,45 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
+                                    <div class="product__thumb__pic set-bg" style="background-image: url('<?php echo $result['image1']; ?>');">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
+                                    <div class="product__thumb__pic set-bg" style="background-image: url('<?php echo $result['image2']; ?>');">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-3.png">
+                                    <div class="product__thumb__pic set-bg" style="background-image: url('<?php echo $result['image3']; ?>');">
                                     </div>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li>
+                            
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-9">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-2.png" alt="">
+                                    <img src="<?php echo $result['image1']; ?>" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-3.png" alt="">
+                                    <img src="<?php echo $result['image2']; ?>" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big.png" alt="">
+                                    <img src="<?php echo $result['image3']; ?>" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-4" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-4.png" alt="">
+                                    <img src="http://localhost/ecommerce/Assets/img/shop-details/product-big-4.png" alt="">
                                     <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div>
@@ -128,20 +122,44 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>Hooded thermal anorak</h4>
+                            <h4><?php echo $result['title']; ?></h4>
                             <div class="rating">
-                                <i class="fa fa-star"></i>
+                                <!-- <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
-                                <span> - 5 Reviews</span>
+                                <span> - 5 Reviews</span> -->
+                                <?php  
+                                if($result['rating']<1){
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                }else if($result['rating']<2){
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                }else if($result['rating']<3){
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                }else if($result['rating']<4){
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                }else if($result['rating']<5){
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                    echo '<i class="fa fa-star"></i>&nbsp&nbsp';
+                                }
+
+
+                                ?>
+
                             </div>
-                            <h3>$270.00 <span>70.00</span></h3>
-                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                            with placket.</p>
-                            <div class="product__details__option">
+                            <h3><?php echo $result['price']; ?><span><?php echo $result['discountPercentage']; ?></span></h3>
+                            <p><?php echo $result['description']; ?></p>
+                            <!-- <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
                                     <label for="xxl">xxl
@@ -175,7 +193,7 @@
                                         <input type="radio" id="sp-9">
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="product__details__cart__option">
                                 <div class="quantity">
                                     <div class="pro-qty">
@@ -190,7 +208,7 @@
                             </div>
                             <div class="product__details__last__option">
                                 <h5><span>Guaranteed Safe Checkout</span></h5>
-                                <img src="img/shop-details/details-payment.png" alt="">
+                                <img src="http://localhost/ecommerce/Assets/img/shop-details/details-payment.png" alt="">
                                 <ul>
                                     <li><span>SKU:</span> 3812912</li>
                                     <li><span>Categories:</span> Clothes</li>
@@ -324,7 +342,7 @@
         </div>
     </section>
     <!-- Shop Details Section End -->
-
+<?php endforeach; ?>
     <!-- Related Section Begin -->
     <section class="related spad">
         <div class="container">
@@ -339,9 +357,9 @@
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
                             <span class="label">New</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -373,9 +391,9 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -408,9 +426,9 @@
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
@@ -442,9 +460,9 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">

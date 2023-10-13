@@ -50,7 +50,9 @@ class Home extends CI_Controller {
         $data = curl_exec($ch);
         
         $obj["data"] = json_decode($data);
-
+        /*echo "<pre>";
+        print_r($obj);
+        die;*/
         $this->load->view('website/blog', $obj);
         curl_close($ch);
 	}

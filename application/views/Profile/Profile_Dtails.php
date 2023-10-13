@@ -173,7 +173,7 @@ foreach ($results as $result):
   <li><a href="#order_details">My Order</a></li>
   <li><a href="#AcountS">Accont Setting</a></li>
   <li><a>Payment</a></li>
-  <li><a>MY STUFF</a></li>
+  <li><a>Save products</a></li>
   <li><a>Password</a></li>
   <li><a href="<?= base_url("sign_in/logout/index"); ?>">Logout</a></li>
 </ul>

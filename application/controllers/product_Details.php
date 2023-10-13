@@ -14,7 +14,7 @@ class product_Details extends CI_Controller {
         /*echo "<pre>";
         print_r($obj);
         die;*/
-        for($i=4;$i<=29;$i++)
+        for($i=0;$i<=29;$i++)
         {
         $Arr = array(
             "id" => $obj->products[$i]->id,
@@ -36,12 +36,15 @@ class product_Details extends CI_Controller {
             
 
         }
-        if($query){
-                echo "data inserted";
-            }else{
-                echo "data not inserted";
-            }
+        
         
 	}
+
+    public function catagary(){
+        
+    }
+
+    
+
 
 }

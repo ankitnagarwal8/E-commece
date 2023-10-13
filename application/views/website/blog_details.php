@@ -122,7 +122,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="blog__details__author">
                                         <div class="blog__details__author__pic">
-                                            <img src="img/blog/details/blog-author.jpg" alt="">
+                                            <img src="http://localhost/ecommerce/Assets/img/blog/details/blog-author.jpg" alt="">
                                         </div>
                                         <div class="blog__details__author__text">
                                             <h5>Aiden Blair</h5>
@@ -142,7 +142,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <a href="" class="blog__details__btns__item">
-                                        <p><span class="arrow_left"></span> Previous Pod</p>
+                                        <p><span class="arrow_left"></span>priview pod</p>
                                         <h5>It S Classified How To Utilize Free Classified Ad Sites</h5>
                                     </a>
                                 </div>
@@ -156,19 +156,19 @@
                         </div>
                         <div class="blog__details__comment">
                             <h4>Leave A Comment</h4>
-                            <form action="#">
+                            <form action="<?= base_url('comments/comments'); ?>" method="post">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Name">
+                                        <input type="text" placeholder="Name" name="name">
                                     </div>
                                     <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Email">
+                                        <input type="email" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Phone">
+                                        <input type="number" placeholder="Phone" name="mobile">
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <textarea placeholder="Comment"></textarea>
+                                        <textarea placeholder="Comment" name="comments"></textarea>
                                         <button type="submit" class="site-btn">Post Comment</button>
                                     </div>
                                 </div>

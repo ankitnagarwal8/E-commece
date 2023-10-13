@@ -83,7 +83,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a>
+                        <a href="<?= base_url('home/shopping_cart'); ?>"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a>
                         <a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
