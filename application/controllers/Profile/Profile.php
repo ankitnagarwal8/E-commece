@@ -7,6 +7,7 @@ class Profile extends CI_Controller {
 	{
 
   		$email = $_SESSION['email'];
+  		$pass = $_SESSION['pass'];
 		$name=$this->input->post("F_name");
 		$L_name=$this->input->post("L_name");
 		$mnum=$this->input->post("m_num");
@@ -50,7 +51,7 @@ class Profile extends CI_Controller {
 						"photo"=> $data['image_metadata']['file_name']
                     );
                      $this->db->where("email",$email);
-                    $update=$this->db->update('register', $updateArr);
+                    $update=$this->db->update('registeration', $updateArr);
                     }
                 }else{
                     $updateArr=array(
@@ -64,13 +65,13 @@ class Profile extends CI_Controller {
 						'Pan_Number'=>$pan_number
                     );
                    $this->db->where("email",$email);
-                   $update=$this->db->update('register', $updateArr);
+                   $update=$this->db->update('registeration', $updateArr);
                  
 
                 }   
                 if($update){
                 	$this->load->database();
-					$res = $this->db->query("select * from register where email='$email'");
+					$res = $this->db->query("select * from registeration where email='$email' &&password='$pass' ");
 					$data['results'] = $res->result_array();
 					return $this->load->view('Profile/Profile_Dtails',$data);
                 }else{

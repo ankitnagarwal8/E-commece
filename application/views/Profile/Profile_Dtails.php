@@ -198,6 +198,8 @@ foreach ($results as $result):
   					<button><a>Shopping Now</a></button>
   			</div>
   		</div>
+
+
   		<div class="AcountS" id="AcountS">
   			<div class="AcountS_head"><h1>Account Infomation</h1></div>
   			<div class="Account_Details">
@@ -219,8 +221,11 @@ foreach ($results as $result):
   				</form>
   			</div>
   		</div>
+  		<div class="">
+  			
+  		</div>
+
   </div>
-</div>
-<?php endforeach;  ?>
+<?php endforeach; ?>
 </body>
 </html>

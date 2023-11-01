@@ -18,7 +18,7 @@ class comments extends CI_Controller {
 		);
 
 		$this->load->database();
-		$que = $this->db->insert("comments",$Arr);
+		$que = $this->db->insert("comment",$Arr);
 
 		if($que){
 			$this->load->view('website/blog_details');

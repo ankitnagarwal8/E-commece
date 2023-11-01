@@ -1,5 +1,3 @@
-<!-- <?php echo $data->products[$i]->images[0]; ?> -->
-
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -263,19 +261,20 @@
                         <?php
                             foreach($datas as $data):
                         ?>
+                       
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" style="background-image: url('<?php echo $data['image1']; ?>')" >
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                        </li>
-                                        <li><a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a></li>
-                                    </ul>
+                             
+                                <div class="product__item">
+                                <div class="product__item__pic set-bg">
+                                    <a href="<?= base_url('shoping_Details/Add_to_cart/index/'.$data['id']) ?>">
+                                    <img  src="<?php echo $data['image1']; ?>">
+                                    </a>
+                               
+                                    
                                 </div>
                                 <div class="product__item__text">
                                     <h6><?php echo $data['title']; ?></h6>
-                                    <a href="<?= base_url('shoping_Details/Add_to_card/index/'.$data['id']) ?>" class="add-cart">+ Add To Cart</a>
+                                    <a href="<?= base_url('shoping_Details/Add_to_cart/index/'.$data['id']) ?>"><?php echo $data['title']; ?></a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
@@ -284,23 +283,16 @@
                                         <i class="fa fa-star-o"></i>
                                     </div>
                                     <h5><?php echo $data['price']; ?></h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4">
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5">
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6">
-                                        </label>
-                                    </div>
+                                    
                                 </div>
                             </div>
+                        
                         </div>
+
                     <?php endforeach;    ?>
                         
                     </div>
+                    
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="product__pagination">

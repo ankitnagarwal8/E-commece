@@ -60,9 +60,9 @@
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="<?= base_url('home/about'); ?>">About Us</a></li>
-                                    <li><a href="<?= base_url('home/shop_details'); ?>">Shop Details</a></li>
-                                    <li><a href="<?= base_url('home/shopping_cart'); ?>">Shopping Cart</a></li>
-                                    <li><a href="<?= base_url('home/checkout'); ?>">Check Out</a></li>
+                                   <!--  <li><a href="<?= base_url('home/shop_details'); ?>">Shop Details</a></li> -->
+                                    <li><a href="<?= base_url('cart/cart/cart_data'); ?>">Shopping Cart</a></li>
+                                   
                                     
                                     <li><a href="<?= base_url('home/blog_details'); ?>">Blog Details</a></li>
                                     <?php
@@ -84,8 +84,8 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="http://localhost/ecommerce/Assets/img/icon/search.png" alt=""></a>
                         <a href="<?= base_url('home/shopping_cart'); ?>"><img src="http://localhost/ecommerce/Assets/img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="http://localhost/ecommerce/Assets/img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
+                        <a href="<?= base_url('cart/cart/cart_data'); ?>"><img src="http://localhost/ecommerce/Assets/img/icon/cart.png" alt=""> <span><?php $rows = count($this->cart->contents()); echo $rows; ?></span></a>
+                        <!-- <div class="price">$0.00</div> -->
                     </div>
                 </div>
             </div>

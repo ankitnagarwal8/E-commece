@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','email','session',);
+$autoload['libraries'] = array('database','email','session','cart');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url','date');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('login/login_model','Home_data/Home_Data','shopping_Data/shopping_Data','blog_details/blog_details_data');
+$autoload['model'] = array('login/login_model','Home_data/Home_Data','shopping_Data/shopping_Data','blog_details/blog_details_data','cart/cart_data','admin/ADMIN_PROFILE_DATA');

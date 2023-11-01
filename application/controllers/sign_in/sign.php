@@ -40,7 +40,7 @@ class sign extends CI_Controller {
 						'email_verified_at'=>0
 					);
 
-					$this->db->insert('register',$Arr);
+					$this->db->insert('registeration',$Arr);
 
 					if($this->email->send()){
 
@@ -66,7 +66,7 @@ class sign extends CI_Controller {
     $verification_code = $this->input->post('verification_code');
 
     $this->load->database();
-    $sql = $this->db->query("UPDATE register SET email_verified_at = NOW() WHERE email = '" . $email . "' AND verification_code = '" . $verification_code . "'");
+    $sql = $this->db->query("UPDATE registeration SET email_verified_at = NOW() WHERE email = '" . $email . "' AND verification_code = '" . $verification_code . "'");
 
     if($sql){
     		$newdata = array(
@@ -93,10 +93,16 @@ class sign extends CI_Controller {
 				$Arr = array(
 			"password" => $pass
 		);
+		$newdata = array(
+        		'pass'     => $pass
+			);
+    	$this->load->library('session');	
+		$data = $this->session->set_userdata($newdata);		
 		$this->load->database();
-		$this->db->update('register',$Arr);
+		$this->db->update('registeration',$Arr);
 		$this->db->where('email',$email);
-		$this->load->view('website/index');
+
+		$this->load->view('sign/login');
 		}else{
 			echo "Please Enter both passwords are same";
 		}	

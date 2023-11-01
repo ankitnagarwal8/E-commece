@@ -943,7 +943,10 @@ ol {
 	overflow: hidden;
 	margin-bottom: 40px;
 }
-
+.product__item__pic ul li a img{
+	height: 500px;
+	width: 230px;
+}
 .product__item.sale .product__item__pic .label {
 	color: #ffffff;
 	background: #111111;
@@ -976,7 +979,7 @@ ol {
 	opacity: 1;
 }
 
-.product__item__pic {
+.product__item__pic a img{
 	height: 260px;
 	position: relative;
 	background-position: center center;
@@ -1066,10 +1069,8 @@ ol {
 	left: 0;
 	top: 0;
 	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
+	
+	
 }
 
 .product__item__text h6 {
@@ -1077,9 +1078,7 @@ ol {
 	font-size: 15px;
 	font-weight: 600;
 	margin-bottom: 5px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
+	
 }
 
 .product__item__text .rating {
@@ -1145,7 +1144,7 @@ ol {
 
 .product__item__text .product__color__select label input {
 	position: absolute;
-	visibility: hidden;
+	visibility: visible;
 }
 
 /*---------------------
@@ -1397,7 +1396,7 @@ ol {
 
 .shop__sidebar__accordion .card-heading a:after,
 .shop__sidebar__accordion .card-heading>a.active[aria-expanded=false]:after {
-	content: "";
+	content: "";
 	font-family: "FontAwesome";
 	font-size: 24px;
 	font-weight: 700;
@@ -1409,7 +1408,7 @@ ol {
 }
 
 .shop__sidebar__accordion .card-heading.active a:after {
-	content: "";
+	content: "";
 	font-family: "FontAwesome";
 	font-size: 24px;
 	font-weight: 700;

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login extends CI_Controller {
+class LOGIN extends CI_Controller {
 
 	public function index()
 	{
@@ -12,7 +12,11 @@ class login extends CI_Controller {
 		$email = $this->input->post('email');
 		$pass = $this->input->post('Password');
 		$this->load->model('login/login_model');
+
 		$q = $this->login_model->index($email,$pass);
+		$a = $this->login_model->admin($email,$pass);
+
+
 		if($q){
 			$newdata = array(
         		'email'     => $email,
@@ -21,7 +25,17 @@ class login extends CI_Controller {
     		$this->load->library('session');	
 			$data = $this->session->set_userdata($newdata);
 			$this->load->view('website/index');
-		}else{
+		}else if($a){
+			$newdata = array(
+        		'admin_email'     => $email,
+        		'logged_in' => TRUE
+			);
+    		$this->load->library('session');	
+			$data = $this->session->set_userdata($newdata);
+			/*$this->load->view('admin/index');*/
+			redirect(base_url('admin/ADMIN'));
+		}
+		else{
 			$this->session->set_flashdata('not_find_email','this email is not register.please register now');
 			$this->load->view('sign/login');
 		}

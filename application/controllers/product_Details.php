@@ -14,10 +14,10 @@ class product_Details extends CI_Controller {
         /*echo "<pre>";
         print_r($obj);
         die;*/
-        for($i=0;$i<=29;$i++)
+        for($i=0;$i<=1;$i++)
         {
         $Arr = array(
-            "id" => $obj->products[$i]->id,
+            /*"id" => $obj->products[$i]->id,*/
             "title" => $obj->products[$i]->title,
             "description" => $obj->products[$i]->description,
             "price" => $obj->products[$i]->price,
@@ -32,7 +32,7 @@ class product_Details extends CI_Controller {
             "image3" => $obj->products[$i]->images[2]
         );
             $this->load->database();
-            $query = $this->db->insert('product', $Arr);
+            $query = $this->db->insert('products', $Arr);
             
 
         }

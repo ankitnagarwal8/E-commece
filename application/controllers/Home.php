@@ -7,6 +7,8 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('Home_data');
 		$data['res1'] = $this->Home_data->index();
+		$this->load->model('Home_data');
+		$data['res1'] = $this->Home_data->bestsell();
 		
 		$this->load->view('website/index', $data);
 	}
@@ -64,7 +66,7 @@ class Home extends CI_Controller {
 	{
 		$email = $_SESSION['email'];
 		$this->load->database();
-		$res = $this->db->query("select * from register where email='$email'");
+		$res = $this->db->query("select * from registeration where email='$email'");
 		$data['results'] = $res->result_array();
 		$this->load->view('Profile/Profile_Dtails',$data);
 		
