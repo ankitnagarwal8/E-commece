@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
 <style>
 body {
   margin: 0;
@@ -61,6 +63,9 @@ li a.active {
 li a:hover:not(.active) {
   background-color: #555;
   color: white;
+}
+#myDIV {
+  
 }
 #AcountS{
 	width:86%;
@@ -150,7 +155,7 @@ foreach ($results as $result):
   <li>
   	<div class="user">
   		<div class="user_icon">
-  			<!--  -->
+  		
   			<?php
   			$photo = $result['photo']; 
 
@@ -170,35 +175,73 @@ foreach ($results as $result):
   <br>
   <br>
   <br>
-  <li><a href="#order_details">My Order</a></li>
-  <li><a href="#AcountS">Accont Setting</a></li>
+  <li><button onclick="myFunction()">My Order</button></li>
+  <li><button onclick="mFunction()">Accont Setting</button></li>
   <li><a>Payment</a></li>
   <li><a>Save products</a></li>
   <li><a>Password</a></li>
   <li><a href="<?= base_url("sign_in/logout/index"); ?>">Logout</a></li>
 </ul>
-
+<?php endforeach; ?>
 <div class="container" style="margin-left:30%;padding:1px 16px;height:auto;">
 	<button class="button"><a href="<?= base_url(); ?>">Home</a></button>
-  		<div class="order_details" id="order_details">
+
+  		<div class="order_details" id="myDIV">
   			<div class="order_head">
-  				<span><h1>Order status</h1></span>
-  				<span><h5><input type="checkbox">On the way</h5></span>
-  				<span><h5><input type="checkbox">Delivered</h5></span>
-  				<span><h5><input type="checkbox">Canceled</h5></span>
-  				<span><h5><input type="checkbox">Return</h5></span>
-  				<span><h1>Order time</h1></span>
-  				<span><h5><input type="checkbox">Last 30 days</h5></span>
-  				<span><h5><input type="checkbox">2023</h5></span>
-  				<span><h5><input type="checkbox">2022</h5></span>
-  				<span><h5><input type="checkbox">2021</h5></span>
-  				<span><h5><input type="checkbox">2020</h5></span>
+  				<span><h1><a>Order status</a></h1></span>
+  				<span><h5><a>On the way</a></h5></span>
+  				<span><h5><a>delivered</a></h5></span>
+  				<span><h5><a>Canceled</a></h5></span>
+  				<span><h5><a>Return</a></h5></span>
+  				<span><h1><a>Order time</a></h1></span>
+  				<span><h5><a>Last 30 days</a></h5></span>
+  				<span><h5><a>2023</a></h5></span>
+  				<span><h5><a>2022</a></h5></span>
+  				<span><h5><a>2021</a></h5></span>
+  				<span><h5><a>2020</a></h5></span>
   			</div>
   			<div class="order_record">
-  					<button><a>Shopping Now</a></button>
+  					
+  						<table class="table" border="1px solid black" cellspacing="0" >
+                  <thead class="table-dark">
+                    <tr>
+                        <th>order id</th>
+                        <th>product name</th>
+                        <th>qty</th>
+                        <th>product price</th>
+                        <th>product subtotal</th>
+                        <th>status</th>
+                        <th>order date</th>
+                        <th>product ordertime</th>
+                     </tr>
+                  </thead>
+                <?php foreach($result1 as $res): ?>
+                  <tbody>
+                    <tr>
+                      <td><?php echo $res['id']; ?></td>
+                      <td><?php echo $res['product_name']; ?></td>
+                      <td><?php echo $res['qty']; ?></td>
+                      <td><?php echo $res['product_price']; ?></td>
+                      <td><?php echo $res['product_sub_total']; ?></td>
+                      <td><?php
+                      if($res['status']==0){
+                          echo "pending";
+                      }else{
+                          echo "processing";
+                      } 
+                      ?>                                               
+                      </td>
+                      <td><?php echo $res['order_date']; ?></td>
+                      <td><?php echo $res['order_time']; ?></td>
+
+                      </tr>  
+                      </tbody>
+                      <?php endforeach; ?> 
+                      </table>
+  					
   			</div>
   		</div>
-
+  		<?php foreach ($results as $result): ?>
 
   		<div class="AcountS" id="AcountS">
   			<div class="AcountS_head"><h1>Account Infomation</h1></div>
@@ -221,11 +264,32 @@ foreach ($results as $result):
   				</form>
   			</div>
   		</div>
+  		<?php endforeach; ?>
   		<div class="">
-  			
+  				
   		</div>
 
   </div>
-<?php endforeach; ?>
+
+
+  <script>
+function myFunction() {
+  var x = document.getElementById('myDIV');
+  if (x.style.visibility === 'hidden') {
+    x.style.visibility = 'visible';
+  } else {
+    x.style.visibility = 'hidden';
+  }
+}
+function mFunction() {
+  var x = document.getElementById('AcountS');
+  if (x.style.visibility === 'hidden') {
+    x.style.visibility = 'visible';
+  } else {
+    x.style.visibility = 'hidden';
+  }
+}
+</script>
+
 </body>
-</html>
+</html> 

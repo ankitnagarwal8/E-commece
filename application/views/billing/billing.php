@@ -108,7 +108,7 @@
             "name": "ankit",
             "description": "Transaction for ",
             "image": "https://example.com/your_logo",
-            //"order_id": " //echo(rand(10,100));", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            //"order_id": " //echo(rand(10,100));", //This is a sample Order ID. Pass the `id` obtained	 in the response of Step 1
             "callback_url": "<?=  base_url('billing/chackout/bill');  ?>",
             "prefill": {
                 "name": "",

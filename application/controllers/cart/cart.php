@@ -23,7 +23,7 @@ class cart extends CI_Controller {
 		$this->cart->insert($data);
 	}
 
-		$data['results']=$this->cart->contents();
+		$data['results'] = $this->cart->contents();
 		
 
 		$this->load->view('website/cart',$data);

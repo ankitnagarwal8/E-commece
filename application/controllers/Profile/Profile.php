@@ -73,13 +73,13 @@ class Profile extends CI_Controller {
                 	$this->load->database();
 					$res = $this->db->query("select * from registeration where email='$email' &&password='$pass' ");
 					$data['results'] = $res->result_array();
-					return $this->load->view('Profile/Profile_Dtails',$data);
+					redirect(base_url('Home/Profile_Dtails'));
+					/*return $this->load->view('Profile/Profile_Dtails',$data);*/
                 }else{
                     echo "data not updated";
                 }
 	}
-	public function show_Details(){
-		$email = $_SESSION['email'];
+	public function orderdetails(){
 		
 
 	}

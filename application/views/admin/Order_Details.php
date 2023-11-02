@@ -67,15 +67,15 @@
                                             <td><?php echo $result['product_sub_total']; ?></td>
                                             <td><?php
                                                 if($result['status']==0){
-                                                    echo "pandding";
+                                                    echo "pending";
                                                 }else{
-                                                    echo "acsept";
+                                                    echo "accept";
                                                 } 
                                                 ?>                                               
                                             </td>
                                             <td><?php echo $result['order_date']; ?></td>
                                             <td><?php echo $result['order_time']; ?></td>
-                                            <td><a class="btn btn-primary" href="<?= base_url("admin/ORDER/AccseptOrder/".$id); ?>" role="button">Acsept</a></td>
+                                            <td><a class="btn btn-primary" href="<?= base_url("admin/ORDER/AccseptOrder/".$id); ?>" role="button">accept</a></td>
                                             <td><a class="btn btn-danger" href="<?= base_url("admin/ORDER/RejectOrder/".$id); ?>" role="button">Reject</a></td>
 
                                         </tr>  
