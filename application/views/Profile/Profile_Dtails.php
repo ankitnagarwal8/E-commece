@@ -188,9 +188,9 @@ foreach ($results as $result):
 
   		<div class="order_details" id="myDIV">
   			<div class="order_head">
-  				<span><h1><a>Order status</a></h1></span>
-  				<span><h5><a>On the way</a></h5></span>
-  				<span><h5><a>delivered</a></h5></span>
+  				<span><h1><a href="<?= base_url('HOME/Profile_Dtails'); ?>">Order status</a></h1></span>
+  				<span><h5><a href="<?= base_url('Profile/Profile/Profile_Dtails_Processing'); ?>">On the way</a></h5></span>
+  				<span><h5><a href="">delivered</a></h5></span>
   				<span><h5><a>Canceled</a></h5></span>
   				<span><h5><a>Return</a></h5></span>
   				<span><h1><a>Order time</a></h1></span>
@@ -265,7 +265,7 @@ foreach ($results as $result):
   			</div>
   		</div>
   		<?php endforeach; ?>
-  		<div class="">
+  		<div class="AcountS">
   				
   		</div>
 

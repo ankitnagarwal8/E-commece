@@ -79,8 +79,39 @@ class Profile extends CI_Controller {
                     echo "data not updated";
                 }
 	}
-	public function orderdetails(){
-		
+	public function Profile_Dtails()
+	{
 
+		$email = $_SESSION['email'];
+
+		$this->load->database();
+		$p = $this->db->query("select * from registeration where email='$email'");
+		$data = $p->result_array();
+
+		foreach($data as $dt){
+				$id = $dt['id'];
+			}
+			
+		$q = $this->db->query("select * from orders where user_ids='$id'");
+		$data['results'] = $p->result_array();
+		$data['result1'] = $q->result_array();
+		$this->load->view('Profile/Profile_Dtails',$data);
+		
+	}
+	public function Profile_Dtails_Processing(){
+		$email = $_SESSION['email'];
+
+		$this->load->database();
+		$p = $this->db->query("select * from registeration where email='$email'");
+		$data = $p->result_array();
+
+		foreach($data as $dt){
+				$id = $dt['id'];
+			}
+			
+		$q = $this->db->query("select * from orders where user_ids='$id' && status = '1' ");
+		$data['results'] = $p->result_array();
+		$data['result1'] = $q->result_array();
+		$this->load->view('Profile/Profile_Dtails',$data);
 	}
 }

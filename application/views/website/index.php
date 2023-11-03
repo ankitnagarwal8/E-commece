@@ -104,7 +104,7 @@
             </div>
             <div class="row product__filter">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <div class="product__item">
+                    <!-- <div class="product__item">
                                 <div class="product__item__pic set-bg">
                                     <a href="<?= base_url('shoping_Details/Add_to_cart/index/'.$data['id']) ?>">
                                     <img  src="<?php echo $data['image1']; ?>">
@@ -125,7 +125,7 @@
                                     <h5><?php echo $data['price']; ?></h5>
                                     
                                 </div>
-                </div>
+                    </div> -->
                 <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
