@@ -14,13 +14,23 @@ class ADMIN extends CI_Controller {
          
 		
 	}
-	public function Blank()
+	public function web_home()
 	{
-		$this->load->view('admin/layout_blank');
+		$this->load->database();
+		$q = $this->db->query("select * from home_part_1");
+		$data['results'] = $q->result_array();
+		$this->load->view('admin/web_home',$data);
 	}
-	public function OneColumn()
+	public function About_as()
 	{
-		$this->load->view('admin/layout_one_column');
+		$this->load->database();
+		$q = $this->db->query("select * from about_part_1");
+		$data['results1'] = $q->result_array();
+
+		$p = $this->db->query("select * from about_part_2");
+		$data['results2'] = $p->result_array();
+
+		$this->load->view('admin/Web_About_as',$data);
 	}
 	public function Twocolumn()
 	{

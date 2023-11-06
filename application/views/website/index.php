@@ -20,46 +20,46 @@
     <!-- Header Section Begin -->
     <?php include('header.php');  ?>
     <!-- Header Section End -->
-
+<?php foreach($results as $result): ?>
     <!-- Hero Section Begin -->
         <section class="hero">
         <div class="hero__slider carousel" >
-            <div class="hero__items set-bg" data-setbg="http://localhost/ecommerce/Assets/img/hero/hero-1.jpg">
+            <div class="hero__items set-bg" data-setbg="<?php echo $result['bg_img']; ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero_text_details">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <h6><?php echo $result['heading_6']; ?></h6>
+                                <h2><?php echo $result['heading_2']; ?></h2>
+                                <p><?php echo $result['paragraph_1']; ?></p>
+                                <a href="<?= base_url('shoping_Details/shoping_Details'); ?>" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                 <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="<?php echo $result['face_book']; ?>"><i class="fa fa-facebook"></i></a>
+                                    <a href="<?php echo $result['twitter']; ?>"><i class="fa fa-twitter"></i></a>
+                                    <a href="<?php echo $result['pinterest']; ?>"><i class="fa fa-pinterest"></i></a>
+                                    <a href="<?php echo $result['instagram']; ?>"><i class="fa fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </div>
+    <!-- </section> -->
     <!-- Hero Section End -->
-
+<?php endforeach; ?>
     <!-- Banner Section Begin -->
     <section class="banner spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 offset-lg-4">
+                <div class="col-lg-7 offset-lg-4 ">
                     <div class="banner__item">
                         <div class="banner__item__pic">
                             <img src="http://localhost/ecommerce/Assets/img/banner/banner-1.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
                             <h2>Clothing Collections 2030</h2>
-                            <a href="#">Shop now</a>
+                            <a href="<?= base_url('shoping_Details/shoping_Details/cloths'); ?>">Shop now</a>
                         </div>
                     </div>
                 </div>
@@ -70,18 +70,18 @@
                         </div>
                         <div class="banner__item__text">
                             <h2>Accessories</h2>
-                            <a href="#">Shop now</a>
+                            <a href="<?= base_url('shoping_Details/shoping_Details/Accessories'); ?>">Shop now</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-7 offset-lg-4">
                     <div class="banner__item banner__item--last">
                         <div class="banner__item__pic">
                             <img src="http://localhost/ecommerce/Assets/img/banner/banner-3.jpg" alt="">
                         </div>
                         <div class="banner__item__text">
                             <h2>Shoes Spring 2030</h2>
-                            <a href="#">Shop now</a>
+                            <a href="<?= base_url('shoping_Details/shoping_Details/Shoes'); ?>">Shop now</a>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
     <!-- Banner Section End -->
 
     <!-- Product Section Begin -->
-    <section class="product spad">
+<!--     <section class="product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -396,14 +396,37 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="instagram__pic">
-                        <div class="instagram__pic__item set-bg" style="background-image: url('http://localhost/ecommerce/Assets/img/instagram/instagram-1.jpg');"></div>
-                        <div class="instagram__pic__item set-bg" style="background-image: url('http://localhost/ecommerce/Assets/img/instagram/instagram-2.jpg');"></div>
-                        <div class="instagram__pic__item set-bg" style="background-image: url('http://localhost/ecommerce/Assets/img/instagram/instagram-3.jpg');"></div>
-                        <div class="instagram__pic__item set-bg" style="background-image: url('http://localhost/ecommerce/Assets/img/instagram/instagram-4.jpg');"></div>
-                        <div class="instagram__pic__item set-bg" style="background-image: url('http://localhost/ecommerce/Assets/img/instagram/instagram-5.jpg');"></div>
-                        <div class="instagram__pic__item set-bg" style="background-image: url('http://localhost/ecommerce/Assets/img/instagram/instagram-6.jpg');"></div>
-                    </div>
+                    <!-- <div class="instagram__pic">
+                        <div class="embedsocial-hashtag" data-ref="e82ec5503f808d1ce188c8bf50f7e77596772df5">
+                         <a class="feed-powered-by-es" href="https://embedsocial.com/social-media-aggregator/" target="_blank" title="Widget by EmbedSocial"> Widget by EmbedSocial <span>→</span> 
+                         </a> 
+                        </div> 
+                        <script> (function(d, s, id) { 
+                            var js;
+                            if (d.getElementById(id)) 
+                                {
+                                    return;
+                                } 
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "https://embedsocial.com/cdn/ht.js";
+                                d.getElementsByTagName("head")[0].appendChild(js);
+                                }
+                                (document, "script", "EmbedSocialHashtagScript")); 
+                    </script>
+                    </div> -->
+                    <!-- Place <div> tag where you want the feed to appear -->
+<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+
+<!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+<script type="text/javascript">
+/* curator-feed-default-feed-layout */
+(function(){
+var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+i.src="https://cdn.curator.io/published/ae5f2fa4-8efd-40a0-a2a9-201a58cb3bbf.js";
+e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
                 </div>
                 <div class="col-lg-4">
                     <div class="instagram__text">

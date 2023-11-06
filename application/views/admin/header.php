@@ -240,11 +240,11 @@
                     </li>
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Application</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="<?= base_url('admin/ADMIN/Blank'); ?>">Blank</a></li>
-                            <li><a href="<?= base_url('admin/ADMIN/OneColumn'); ?>">One Column</a></li>
+                            <li><a href="<?= base_url('admin/ADMIN/web_home'); ?>">Home</a></li>
+                            <li><a href="<?= base_url('admin/ADMIN/About_as'); ?>">About As</a></li>
                             <li><a href="<?= base_url('admin/ADMIN/Twocolumn'); ?>">Two column</a></li>
                             <li><a href="<?= base_url('admin/ADMIN/layout_compact_nav'); ?>">Compact Nav</a></li>
                             <li><a href="<?= base_url('admin/ADMIN/layout_vertical'); ?>">Vertical</a></li>

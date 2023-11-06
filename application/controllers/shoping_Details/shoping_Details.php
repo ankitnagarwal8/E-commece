@@ -24,4 +24,24 @@ class shoping_Details extends CI_Controller {
 		$que['datas'] = $this->shopping_Data->smartphones_data();
 		$this->load->view('website/shop',$que);
 	}
+	public function cloths(){
+		$this->load->model('shopping_Data/shopping_Data');
+		$que['datas'] = $this->shopping_Data->cloth_data();
+		$this->load->view('website/shop',$que);
+	}
+	public function Shoes(){
+		$this->load->model('shopping_Data/shopping_Data');
+		$que['datas'] = $this->shopping_Data->Shoes_data();
+		$this->load->view('website/shop',$que);
+	}
+	public function Accessories(){
+		$this->load->model('shopping_Data/shopping_Data');
+		$que['datas'] = $this->shopping_Data->Accessories_data();
+		$this->load->view('website/shop',$que);
+	}
+	public function Kids(){
+		$this->load->model('shopping_Data/shopping_Data');
+		$que['datas'] = $this->shopping_Data->Kids_data();
+		$this->load->view('website/shop',$que);
+	}
 }

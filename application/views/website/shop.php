@@ -95,12 +95,11 @@
                                                     <li><a href="<?= base_url('shoping_Details/shoping_Details/All_Catagary'); ?>">All Catagary</a></li>
                                                     <li><a href="<?= base_url('shoping_Details/shoping_Details/Groceries'); ?>">Groceries</a></li>
                                                     <li><a href="<?= base_url('shoping_Details/shoping_Details/smartphones'); ?>">smartphones</a></li>
-                                                    <li><a href="#">Clothing (20)</a></li>
-                                                    <li><a href="#">Shoes (20)</a></li>
-                                                    <li><a href="#">Accessories (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/cloths'); ?>">Clothing </a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Shoes'); ?>">Shoes</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Accessories'); ?>">Accessories</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">Kids</a></li>
+                                                
                                                 </ul>
                                             </div>
                                         </div>
@@ -131,18 +130,18 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
-                                                    <li><a href="#">$0.00 - $50.00</a></li>
-                                                    <li><a href="#">$50.00 - $100.00</a></li>
-                                                    <li><a href="#">$100.00 - $150.00</a></li>
-                                                    <li><a href="#">$150.00 - $200.00</a></li>
-                                                    <li><a href="#">$200.00 - $250.00</a></li>
-                                                    <li><a href="#">250.00+</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">$0.00 - $50.00</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">$50.00 - $100.00</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">$100.00 - $150.00</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">$150.00 - $200.00</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">$200.00 - $250.00</a></li>
+                                                    <li><a href="<?= base_url('shoping_Details/shoping_Details/Kids'); ?>">250.00+</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <!-- <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseFour">Size</a>
                                     </div>
@@ -176,8 +175,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card">
+                                </div> -->
+                                <!-- <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
                                     </div>
@@ -214,7 +213,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseSix">Tags</a>
@@ -231,6 +230,7 @@
                                                 <a href="#">Accessories</a>
                                             </div>
                                         </div>
+                          
                                     </div>
                                 </div>
                             </div>
@@ -282,7 +282,7 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <h5><?php echo $data['price']; ?></h5>
+                                    <h5><?php echo $data['price']; ?>  $</h5>
                                     
                                 </div>
                             </div>

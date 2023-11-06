@@ -5,11 +5,9 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('Home_data');
-		$data['res1'] = $this->Home_data->index();
-		$this->load->model('Home_data');
-		$data['res1'] = $this->Home_data->bestsell();
-		
+		$this->load->database();
+		$q = $this->db->query('select * from home_part_1');
+		$data['results'] = $q->result_array();
 		$this->load->view('website/index', $data);
 	}
 	/*public function shop()
@@ -25,7 +23,12 @@ class Home extends CI_Controller {
 	}*/
 	public function about()
 	{
-		$this->load->view('website/about');
+		$this->load->database();
+		$q = $this->db->query('select * from about_part_1');
+		$data['results'] = $q->result_array();
+		$p = $this->db->query('select * from about_part_2');
+		$data['results2'] = $p->result_array();
+		$this->load->view('website/about',$data);
 	}
 
 	public function shop_details()
